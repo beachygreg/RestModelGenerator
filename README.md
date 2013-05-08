@@ -13,7 +13,7 @@ Currently supported languages are:
 Creating model files
 --------------------
 
-You need to name the file in the following format "<class name>.model".
+You need to name the file in the following format "\<class name\>.model".
 Example: myClass.model
 
 All line endings are denoted by a semicolumn and all white spaces in files are ignored.
