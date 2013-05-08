@@ -1,0 +1,6 @@
+com/test/package/model;
+{
+    id:Integer;
+    name:String;
+    users:List:User;
+}

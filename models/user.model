@@ -1,0 +1,7 @@
+com/test/model;
+
+{
+    id:Integer;
+    firstName:String;
+    company:Company;
+}

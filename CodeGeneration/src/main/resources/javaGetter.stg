@@ -1,0 +1,8 @@
+import "javaGenerics.stg"
+
+getter(type) ::= <<
+    public <type.typeName><generic(type)> get<type.variableNameUpperCamel>(){
+        return this.<type.variableName>;
+    }
+
+>>

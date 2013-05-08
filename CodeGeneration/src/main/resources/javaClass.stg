@@ -1,0 +1,23 @@
+import "javaGetter.stg"
+import "javaSetter.stg"
+
+class(modelObject, package, imports) ::= <<
+package <package>;
+
+<imports: {x | import <x>;}>
+
+public class <modelObject.className> {
+
+<modelObject.variables:{x | <memberVariables(x)>}>
+
+<modelObject.variables:{x | <getter(x)>}>
+
+<modelObject.variables:{x | <setter(x)>}>
+
+}
+>>
+
+memberVariables(type) ::= <<
+    private <type.typeName><generic(type)> <type.variableName>;
+
+>>

@@ -1,0 +1,8 @@
+import "javaGenerics.stg"
+
+setter(type) ::= <<
+    public void set<type.variableNameUpperCamel>(<type.typeName><generic(type)> <type.variableName>){
+        this.<type.variableName> = <type.variableName>;
+    }
+
+>>

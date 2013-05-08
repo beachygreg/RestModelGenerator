@@ -1,0 +1,2 @@
+
+generic(type) ::= "<if(type.modelVariableType.typeName)>\<<type.modelVariableType.typeName>><endif>"

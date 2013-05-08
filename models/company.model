@@ -1,0 +1,6 @@
+com/test/model;
+{
+    id:Integer;
+    name:String;
+    accounts:List:Account
+}
