@@ -54,7 +54,7 @@ com/model/test;
 ```
 
 This would generate the following in java:
-```
+```java
 package com/model/test;
 
 public class Test {
