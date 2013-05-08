@@ -2,10 +2,9 @@ package org.remotetech.modelGenerator;
 
 import org.apache.commons.lang.StringUtils;
 import org.remotetech.codeGeneration.GenerationException;
-import org.remotetech.codeGeneration.java.JavaGenerationrService;
+import org.remotetech.codeGeneration.java.JavaGenerationService;
 import org.remotetech.parsing.ModelObjectService;
 import org.remotetech.types.ModelObject;
-import org.remotetech.types.ModelVariableType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +21,14 @@ public class GeneratorService {
     private ModelObjectService modelObjectService;
 
     @Autowired
-    private JavaGenerationrService javaGenerationrService;
+    private JavaGenerationService javaGenerationService;
 
     public void generateCode(GenerationLanguage language, String modelsSource){
         final List<ModelObject> modelObjects = modelObjectService.generateObjectsFromDirectory(StringUtils.defaultIfBlank(modelsSource, "./models"));
 
         switch (language) {
             case JAVA:
-                javaGenerationrService.generateJavaCode(modelObjects);
+                javaGenerationService.generateJavaCode(modelObjects);
                 break;
             default:
                 throw new GenerationException("This language does not exist, feel free to add it to our project on git hub." );

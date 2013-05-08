@@ -12,7 +12,7 @@ public class Generator {
 
     public static void main(String args[]){
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
-        //TODO make this dynamic
+        //TODO get the program to work via arguments...
         final GeneratorService bean = appContext.getBean(GeneratorService.class);
         bean.generateCode(GenerationLanguage.JAVA, null);
 

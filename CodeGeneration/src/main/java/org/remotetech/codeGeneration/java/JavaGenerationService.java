@@ -16,9 +16,9 @@ import java.util.List;
  * Time: 1:35 PM
  */
 @Service
-public class JavaGenerationrService {
-    @Autowired
-    private FileLocationService fileLocationService;
+public class JavaGenerationService {
+
+    private FileLocationService fileLocationService = new FileLocationService("java/");
 
     @Autowired
     private JavaImportsAndPackageGenerator javaImportsAndPackageGenerator;

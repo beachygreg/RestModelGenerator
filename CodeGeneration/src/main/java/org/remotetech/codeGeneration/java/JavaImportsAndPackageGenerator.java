@@ -22,20 +22,27 @@ public class JavaImportsAndPackageGenerator {
         return false;
     }
 
-    public List<String> getImportString(ModelVariableType modelVariableType){
-        if(modelVariableType instanceof ModelList){
+    public List<String> getImportString(ModelVariableType localVariable, ModelObject object){
+        if(localVariable instanceof ModelList){
             final List<String> imports = new ArrayList<String>();
             imports.add("java.util.List");
-            final ModelVariableType modelVariableType1 = ((ModelList) modelVariableType).getModelVariableType();
-            if(modelVariableType1 instanceof  ModelObject){
+            final ModelVariableType modelVariableType1 = ((ModelList) localVariable).getModelVariableType();
+            if(isModelImportRequired(modelVariableType1, object)){
                 imports.add(getModelObjectImportString((ModelObject) modelVariableType1));
             }
             return imports;
         }
-        if(modelVariableType instanceof ModelObject){
-            final String importString = getModelObjectImportString((ModelObject) modelVariableType);
+        if(isModelImportRequired(localVariable, object)){
+            final String importString = getModelObjectImportString((ModelObject) localVariable);
             return Collections.singletonList(importString);
         } else return new ArrayList<String>();
+    }
+
+    private boolean isModelImportRequired(ModelVariableType modelVariableType, ModelObject object) {
+        if(modelVariableType instanceof ModelObject ){
+            return !StringUtils.equals(((ModelObject) modelVariableType).getClassPath(), object.getClassPath());
+        }
+        return false;
     }
 
     private String getModelObjectImportString(ModelObject modelVariableType1) {
@@ -47,7 +54,7 @@ public class JavaImportsAndPackageGenerator {
         final List<String> strings = new ArrayList<String>();
         for (ModelVariableType modelVariableType : modelObject.getVariables()) {
             if(hasImport(modelVariableType)){
-                strings.addAll(getImportString(modelVariableType));
+                strings.addAll(getImportString(modelVariableType, modelObject));
             }
         }
         return strings;

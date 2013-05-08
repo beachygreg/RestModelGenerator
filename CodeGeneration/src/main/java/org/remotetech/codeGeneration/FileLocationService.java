@@ -11,20 +11,25 @@ import java.io.IOException;
  * Date: 28/04/13
  * Time: 4:27 PM
  */
-@Service
 public class FileLocationService {
 
+
     public static final String SRC = "./src/";
+    private String src;
+
+    public FileLocationService(String languageDir){
+       src = SRC + languageDir;
+    }
 
     public void createPackage(String location){
-        final File file = new File(SRC + location);
+        final File file = new File(src + location);
         if(!file.exists()){
             file.mkdirs();
         }
     }
 
     public void createFile(String location, String content, String name){
-        final File file = new File(SRC +location, name);
+        final File file = new File(src +location, name);
         try {
             FileUtils.writeStringToFile(file, content);
         } catch (IOException e) {
