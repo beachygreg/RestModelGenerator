@@ -38,10 +38,9 @@ Example:
 testList:List:String;
 ```
 
-Full Example:
-file name = test.model
+Example: test.model
 ```html
-com/test/account;
+com/model/test;
 {
     id:Integer;
     name:String;
