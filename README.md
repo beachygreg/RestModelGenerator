@@ -47,3 +47,29 @@ com/model/test;
 
 }
 ```
+
+This would generate the following in java:
+```
+package com/model/test;
+
+public class Test {
+   private Integer id;
+   private String name;
+   
+   public Integer getId(){
+      return this.id;
+   }
+   
+   public void setId(String id){
+      this.id = id;
+   }
+   
+   public String getName(){
+      return this.name;
+   }
+   
+   public void setName(String name){
+      this.name = name;
+   }
+}
+```
