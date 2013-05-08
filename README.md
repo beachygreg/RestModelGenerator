@@ -14,7 +14,7 @@ Currently supported languages are:
 Creating model files
 --------------------
 
-You need to name the file in the following format "\<class name\>.model".
+You need to name the file in the following format `"\<class name\>.model"`.
 
 Example: myClass.model
 
