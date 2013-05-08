@@ -41,9 +41,9 @@ Example:
 testList:List:String;
 ```
 
-Model example
+Model file example
 ----------------------
-Example: `test.model`
+Filename: `test.model`
 ```html
 com/model/test;
 {
