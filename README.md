@@ -41,6 +41,8 @@ Example:
 testList:List:String;
 ```
 
+Model example
+----------------------
 Example: `test.model`
 ```html
 com/model/test;
