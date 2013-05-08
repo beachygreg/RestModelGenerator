@@ -39,7 +39,6 @@ testList:List:String;
 ```
 
 Full Example:
-
 file name = test.model
 ```html
 com/test/account;
