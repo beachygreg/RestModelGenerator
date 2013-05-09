@@ -9,7 +9,7 @@ Currently supported languages are:
 
 + Java
 
-Feel free to get started! Replace the model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. There are allot more features to some to RestModelGenerator so if there is something think needs adding or want to help out let me know beachy.greg@gmail.com!
+Feel free to get started! Replace the model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. 
 
 Creating model files
 --------------------
@@ -87,3 +87,16 @@ public class Test {
    }
 }
 ```
+
+Replacing Templates
+--------------------
+If you look at the source code in `CodeGeneration/src/main/resources` you will find the templates. You can copy these files change them as you see fit then place them in the directory you are running the project.
+
+Feature Development
+---------------------
+There are allot more features to some to RestModelGenerator so if there is something think needs adding or want to help out let me know beachy.greg@gmail.com!
+
+Features being developed
++ C# language generation.
++ Create a better way to overide templates.
++ Add support for Map type.
