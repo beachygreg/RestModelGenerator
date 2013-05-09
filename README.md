@@ -101,3 +101,5 @@ Features being developed
 + Ruby generation.
 + Refactor templates.
 + Add support for Map type.
++ Add annotations or something to mode file syntax for more flexability in language generation.
++ Allow model files to extend other mode files (note not for class extension). 
