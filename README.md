@@ -1,9 +1,9 @@
 RestModelGenerator
 ==================
 
-You can use this tool to define a rest model and generate source code for various languages.
+This tool is intended for developers of REST applications. It will generate simple objects that can represend the json you rest interface accepts. This tool is not limited to rest, it is intended to generate data type objects for any purpose.
 
-A simple syntax is used to define your objects used in your json. Once you have created these objects you can generate you code as required.
+A simple syntax is used to define your objects. Once you have created these model definition files you can generate your code as required.
 
 Currently supported languages are:
 
