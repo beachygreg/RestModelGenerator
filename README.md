@@ -1,7 +1,7 @@
 RestModelGenerator
 ==================
 
-This tool is intended for developers of REST applications. It will generate simple objects that can represend the json you rest interface accepts. This tool is not limited to rest, it is intended to generate data type objects for any purpose.
+This tool is intended for developers of REST applications. It will generate simple objects that can represend the json or xml your rest interface accepts. This tool is not limited to rest, it is intended to generate data type objects for any purpose.
 
 A simple syntax is used to define your objects. Once you have created these model definition files you can generate your code as required.
 
