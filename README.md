@@ -90,7 +90,7 @@ public class Test {
 
 Replacing Templates
 --------------------
-If you look at the source code in `CodeGeneration/src/main/resources` you will find the templates. You can copy these files change them as you see fit then place them in the directory you are running the project.
+If you look at the source code in `CodeGeneration/src/main/resources` you will find the templates used to generate the code. You can copy these files change them as you see fit then place them in the directory you are running the project.
 
 Feature Development
 ---------------------
