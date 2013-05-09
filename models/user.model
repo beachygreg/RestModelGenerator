@@ -4,4 +4,6 @@ com/test/model;
     id:Integer;
     firstName:String;
     company:Company;
+    weight:Float;
+    blueEyes:Boolean;
 }

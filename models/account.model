@@ -2,5 +2,4 @@ com/test/account;
 {
     id:Integer;
     name:String;
-
 }

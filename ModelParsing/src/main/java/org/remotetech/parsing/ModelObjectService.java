@@ -4,7 +4,7 @@ import org.remotetech.parsing.files.ModelFileService;
 import org.remotetech.parsing.objectBuilding.ModelService;
 import org.remotetech.types.ModelObject;
 import org.remotetech.types.ModelVariableType;
-import org.remotetech.parsing.objectBuilding.TypeService;
+import org.remotetech.types.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +26,7 @@ public class ModelObjectService {
     @Autowired
     private ModelService modelService;
 
-    @Autowired
-    private TypeService typeService;
+    private TypeService typeService = new TypeService();
 
     public List<ModelObject> generateObjectsFromDirectory(String fileLocation){
         final List<File> modelFiles = modelFileService.getModelFiles(fileLocation);

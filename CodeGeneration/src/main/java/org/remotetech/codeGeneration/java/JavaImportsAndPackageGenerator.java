@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.remotetech.types.ModelList;
 import org.remotetech.types.ModelObject;
 import org.remotetech.types.ModelVariableType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -16,6 +17,10 @@ import java.util.*;
  */
 @Service
 public class JavaImportsAndPackageGenerator {
+
+    @Autowired
+    private ModelObjectImportService modelObjectImportService;
+
     public boolean hasImport(ModelVariableType modelVariableType){
         if(modelVariableType instanceof ModelList) return true;
         if(modelVariableType instanceof ModelObject) return true;
@@ -27,30 +32,21 @@ public class JavaImportsAndPackageGenerator {
             final List<String> imports = new ArrayList<String>();
             imports.add("java.util.List");
             final ModelVariableType modelVariableType1 = ((ModelList) localVariable).getModelVariableType();
-            if(isModelImportRequired(modelVariableType1, object)){
-                imports.add(getModelObjectImportString((ModelObject) modelVariableType1));
+            if(modelObjectImportService.isModelImportRequired(modelVariableType1, object)){
+                imports.add(modelObjectImportService.getModelObjectImportString((ModelObject) modelVariableType1));
             }
             return imports;
         }
-        if(isModelImportRequired(localVariable, object)){
-            final String importString = getModelObjectImportString((ModelObject) localVariable);
+        if(modelObjectImportService.isModelImportRequired(localVariable, object)){
+            final String importString = modelObjectImportService.getModelObjectImportString((ModelObject) localVariable);
             return Collections.singletonList(importString);
         } else return new ArrayList<String>();
     }
 
-    private boolean isModelImportRequired(ModelVariableType modelVariableType, ModelObject object) {
-        if(modelVariableType instanceof ModelObject ){
-            return !StringUtils.equals(((ModelObject) modelVariableType).getClassPath(), object.getClassPath());
-        }
-        return false;
-    }
 
-    private String getModelObjectImportString(ModelObject modelVariableType1) {
-        final String classPath = modelVariableType1.getClassPath();
-        return StringUtils.replace(classPath, "/", ".") + "." + modelVariableType1.getClassName();
-    }
 
-    public List<String> getImportStrings(ModelObject modelObject){
+
+    public List<String> buildJavaImportStringList(ModelObject modelObject){
         final List<String> strings = new ArrayList<String>();
         for (ModelVariableType modelVariableType : modelObject.getVariables()) {
             if(hasImport(modelVariableType)){

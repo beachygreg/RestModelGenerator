@@ -32,7 +32,7 @@ public class JavaGenerationService {
 
             clazz.add("modelObject", modelObject);
             clazz.add("package", javaImportsAndPackageGenerator.getPackageString(modelObject));
-            clazz.add("imports", javaImportsAndPackageGenerator.getImportStrings(modelObject));
+            clazz.add("imports", javaImportsAndPackageGenerator.buildJavaImportStringList(modelObject));
 
             fileLocationService.createFile(modelObject.getClassPath(),clazz.render(),modelObject.getClassName() + ".java");
         }

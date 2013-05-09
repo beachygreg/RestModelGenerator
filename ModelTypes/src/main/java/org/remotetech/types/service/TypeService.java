@@ -1,4 +1,4 @@
-package org.remotetech.parsing.objectBuilding;
+package org.remotetech.types.service;
 
 import org.remotetech.types.*;
 import org.springframework.stereotype.Service;
@@ -11,16 +11,18 @@ import java.util.Map;
  * Date: 21/04/13
  * Time: 10:28 PM
  */
-@Service
 public class TypeService {
-
+    /**
+     * We could use annotate these classes and use spring or aop to do this but is seems like to much work...
+     * So just going to do it like this for now.
+     */
     public Map<String, ModelVariableType> getStandardVariableTypes(){
         final HashMap<String, ModelVariableType> stringModelVariableTypeHashMap = new HashMap<String, ModelVariableType>();
         stringModelVariableTypeHashMap.put(new ModelFloatingPoint().getTypeName(), new ModelFloatingPoint());
         stringModelVariableTypeHashMap.put(new ModelInteger().getTypeName(), new ModelInteger());
         stringModelVariableTypeHashMap.put(new ModelList().getTypeName(), new ModelList());
         stringModelVariableTypeHashMap.put(new ModelString().getTypeName(), new ModelString());
-
+        stringModelVariableTypeHashMap.put(new ModelBoolean().getTypeName(), new ModelBoolean());
         return stringModelVariableTypeHashMap;
     }
 }
