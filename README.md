@@ -9,7 +9,7 @@ Currently supported languages are:
 
 + Java
 
-
+Feel free to get started! Replace the model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. There are allot more features to some to RestModelGenerator so if there is something think needs adding or want to help out let me know beachy.greg@gmail.com!
 
 Creating model files
 --------------------
@@ -21,7 +21,7 @@ All line endings are denoted by a semicolumn and all white spaces in files are i
 The first entry in the file should be the output directory or package for the file, folders delimeted by forward slash. 
 
 Example:
-```html
+```
 test/output/dir;
 ```
 
@@ -30,15 +30,24 @@ After the folder output line the class body declration can begin. The class body
 Variable name off member variables are declared first, followed by a column then the type and then a semicolumn to denote the end of line `"<variable name>:<type>;"`.
 
 Example:
-```html
+```
 testVar:String;
 ```
 
 A List is declared the same as normal variables (as if the list was the type) but the type of objects in the list is denoted following the type. `"<variable name>:List:<type>;"`
 
 Example:
-```html
+```
 testList:List:String;
+```
+
+The following types are currently supported:
+```
+varString:String;
+varNumber:Integer;
+varFloatingPoint:Float;
+varListOfStrings:List:String;
+varOwnObject:CoustomModelObject;
 ```
 
 Model file example
