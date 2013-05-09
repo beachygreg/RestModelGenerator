@@ -99,5 +99,5 @@ There are allot more features to some to RestModelGenerator so if there is somet
 Features being developed
 + C# language generation.
 + Ruby generation.
-+ Create a better way to overide templates.
++ Refactor templates.
 + Add support for Map type.
