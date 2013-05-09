@@ -24,7 +24,7 @@ public class JavaGenerationService {
     private JavaImportsAndPackageGenerator javaImportsAndPackageGenerator;
 
     public void generateJavaCode(List<ModelObject> modelObjects){
-        final STGroup stGroup = new STGroupFile("javaClass.stg");
+        final STGroup stGroup = new STGroupFile("templates/javaClass.stg");
 
         for (ModelObject modelObject : modelObjects) {
             fileLocationService.createPackage(modelObject.getClassPath());
