@@ -90,7 +90,7 @@ public class Test {
 
 Replacing Templates
 --------------------
-If you look at the source code in `CodeGeneration/src/main/resources` you will find the templates used to generate the code. You can copy these files change them as you see fit then place them in the directory you are running the project.
+If you look at the source code in `CodeGeneration/src/main/resources/templates` you will find the templates used to generate the code. You can copy these files change them as you see fit then place them in the directory you are running the project in the subfolder templates.
 
 Feature Development
 ---------------------
@@ -98,5 +98,6 @@ There are allot more features to some to RestModelGenerator so if there is somet
 
 Features being developed
 + C# language generation.
++ Ruby generation.
 + Create a better way to overide templates.
 + Add support for Map type.
