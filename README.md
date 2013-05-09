@@ -14,7 +14,7 @@ Currently supported languages are:
 Creating model files
 --------------------
 
-You need to name the file in the following format `"<class name>.model"`. Example: `myClass.model`
+File names must be in the following format `"<class name>.model"`. Example: `myClass.model`
 
 All line endings are denoted by a semicolumn and all white spaces in files are ignored.
 
@@ -25,7 +25,7 @@ Example:
 test/output/dir;
 ```
 
-After the this line the class body declration can begin. The class body is encapsulated by curly brackets. You declear each variable and variable type of the class within the body. Varaible names must be in lower camel case.
+After the folder output line the class body declration can begin. The class body is encapsulated by curly brackets. You declear each variable and variable type of the class within the body. Varaible names must be in lower camel case.
 
 Variable name off member variables are declared first, followed by a column then the type and then a semicolumn to denote the end of line `"<variable name>:<type>;"`.
 
