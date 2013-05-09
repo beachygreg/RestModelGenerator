@@ -9,7 +9,7 @@ Currently supported languages are:
 
 + Java
 
-Feel free to get started! Replace the model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. 
+Get started fast! Replace the example model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. 
 
 Creating model files
 --------------------
