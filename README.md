@@ -99,7 +99,6 @@ There are allot more features to some to RestModelGenerator so if there is somet
 Features still to be developed
 + C# language generation.
 + Ruby generation.
-+ Refactor templates.
 + Add support for Map type.
 + Add adders to pojo's for lists.
 + Add annotations or something to mode file syntax for more flexability in language generation.
