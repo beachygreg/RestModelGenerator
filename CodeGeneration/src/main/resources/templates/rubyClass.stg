@@ -1,0 +1,10 @@
+
+
+class(modelObject, moduleNameSpace) ::= <<
+module <moduleNameSpace>
+    class <modelObject.className>
+       attr_accessor <modelObject.variables:{x | :<x>, }>
+    end
+end
+>>
+

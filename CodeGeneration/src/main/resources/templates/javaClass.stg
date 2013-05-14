@@ -1,5 +1,5 @@
-import "javaGetter.stg"
-import "javaSetter.stg"
+import "javaGenerics.stg"
+
 
 class(modelObject, package, imports) ::= <<
 package <package>;
@@ -19,5 +19,20 @@ public class <modelObject.className> {
 
 memberVariables(type) ::= <<
     private <type.typeName><generic(type)> <type.variableName>;
+
+>>
+
+setter(type) ::= <<
+    public void set<type.variableNameUpperCamel>(<type.typeName><generic(type)> <type.variableName>){
+        this.<type.variableName> = <type.variableName>;
+    }
+
+>>
+
+
+getter(type) ::= <<
+    public <type.typeName><generic(type)> get<type.variableNameUpperCamel>(){
+        return this.<type.variableName>;
+    }
 
 >>

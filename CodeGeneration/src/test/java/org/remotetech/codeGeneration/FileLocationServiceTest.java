@@ -21,7 +21,7 @@ public class FileLocationServiceTest {
 
     @Test
     public void testCreatePackageAndFile() throws Exception {
-        fileLocationService.createPackage(TEST_DIR);
+        fileLocationService.createFolder(TEST_DIR);
 
         final File dir = new File(SRC + TEST_DIR);
         assertThat(dir.exists(), is(true));

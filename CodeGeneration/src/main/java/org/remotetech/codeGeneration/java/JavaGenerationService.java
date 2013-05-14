@@ -1,5 +1,6 @@
 package org.remotetech.codeGeneration.java;
 
+import org.remotetech.codeGeneration.CodeGenerator;
 import org.remotetech.codeGeneration.FileLocationService;
 import org.remotetech.types.ModelObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,18 +17,18 @@ import java.util.List;
  * Time: 1:35 PM
  */
 @Service
-public class JavaGenerationService {
+public class JavaGenerationService implements CodeGenerator {
 
     private FileLocationService fileLocationService = new FileLocationService("java/");
 
     @Autowired
     private JavaImportsAndPackageGenerator javaImportsAndPackageGenerator;
 
-    public void generateJavaCode(List<ModelObject> modelObjects){
+    public void generateCode(List<ModelObject> modelObjects){
         final STGroup stGroup = new STGroupFile("templates/javaClass.stg");
 
         for (ModelObject modelObject : modelObjects) {
-            fileLocationService.createPackage(modelObject.getClassPath());
+            fileLocationService.createFolder(modelObject.getClassPath());
             final ST clazz = stGroup.getInstanceOf("class");
 
             clazz.add("modelObject", modelObject);

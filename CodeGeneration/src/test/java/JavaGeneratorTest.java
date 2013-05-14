@@ -21,7 +21,7 @@ public class JavaGeneratorTest {
     public void testGetter(){
         final ModelVariableType modelInteger = new ModelInteger();
         modelInteger.setVariableName("testVar");
-        STGroup stGroup = new STGroupFile("templates/javaGetter.stg");
+        STGroup stGroup = new STGroupFile("templates/javaClass.stg");
         final ST getter = stGroup.getInstanceOf("getter");
         getter.add("type",modelInteger);
 
@@ -38,7 +38,7 @@ public class JavaGeneratorTest {
         modelList.setVariableName("intList");
         modelList.setModelVariableType(new ModelInteger());
 
-        STGroup stGroup = new STGroupFile("templates/javaGetter.stg");
+        STGroup stGroup = new STGroupFile("templates/javaClass.stg");
         final ST getter = stGroup.getInstanceOf("getter");
         getter.add("type",modelList);
 

@@ -21,20 +21,24 @@ public class FileLocationService {
        src = SRC + languageDir;
     }
 
-    public void createPackage(String location){
+    public void createFolder(String location){
         final File file = new File(src + location);
         if(!file.exists()){
             file.mkdirs();
         }
     }
 
-    public void createFile(String location, String content, String name){
+    public void createFile(String location, String content, String name) {
         final File file = new File(src +location, name);
         try {
             FileUtils.writeStringToFile(file, content);
         } catch (IOException e) {
             throw new GenerationException("Could not write file to the given directory [" + location + name + "]" );
         }
+    }
+
+    public void createFile(String content, String name){
+        createFile("", content, name);
     }
 
 }

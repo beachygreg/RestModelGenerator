@@ -28,7 +28,7 @@ public class GeneratorService {
 
         switch (language) {
             case JAVA:
-                javaGenerationService.generateJavaCode(modelObjects);
+                javaGenerationService.generateCode(modelObjects);
                 break;
             default:
                 throw new GenerationException("This language does not exist, feel free to add it to our project on git hub." );
