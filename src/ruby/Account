@@ -1,0 +1,5 @@
+module Com::Test::Account
+    class Account
+       attr_accessor :id, name
+    end
+end

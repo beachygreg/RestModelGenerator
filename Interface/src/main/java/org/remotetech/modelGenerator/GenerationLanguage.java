@@ -6,5 +6,5 @@ package org.remotetech.modelGenerator;
  * Time: 5:39 PM
  */
 public enum GenerationLanguage {
-    JAVA;
+    JAVA, RUBY;
 }

@@ -8,6 +8,7 @@ A simple syntax is used to define your objects. Once you have created these mode
 Currently supported languages are:
 
 + Java
++ Ruby
 
 Get started fast! Replace the example model files in the `models` directory with some of your own then run `org.remotetech.modelGenerator.Generator`. 
 
@@ -98,7 +99,6 @@ There are allot more features to some to RestModelGenerator so if there is somet
 
 Features still to be developed
 + C# language generation.
-+ Ruby generation.
 + Add support for Map type.
 + Add adders to pojo's for lists.
 + Add annotations or something to mode file syntax for more flexability in language generation.

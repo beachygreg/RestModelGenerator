@@ -15,6 +15,6 @@ public class Generator {
         //TODO get the program to work via arguments...
         final GeneratorService bean = appContext.getBean(GeneratorService.class);
         bean.generateCode(GenerationLanguage.JAVA, null);
-
+        bean.generateCode(GenerationLanguage.RUBY, null);
     }
 }

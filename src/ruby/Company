@@ -1,0 +1,5 @@
+module Com::Test::Model
+    class Company
+       attr_accessor :id, name, accounts
+    end
+end

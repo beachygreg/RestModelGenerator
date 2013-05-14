@@ -4,6 +4,7 @@ import org.remotetech.codeGeneration.CodeGenerator;
 import org.remotetech.codeGeneration.FileLocationService;
 import org.remotetech.types.ModelObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroup;
@@ -16,8 +17,8 @@ import java.util.List;
  * Date: 28/04/13
  * Time: 1:35 PM
  */
-@Service
-public class JavaGenerationService implements CodeGenerator {
+@Component
+public class JavaGenerator implements CodeGenerator {
 
     private FileLocationService fileLocationService = new FileLocationService("java/");
 
