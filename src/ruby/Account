@@ -3,8 +3,9 @@
  module Accounts 
 
     class Account
-       attr_accessor :id, :name
+       attr_accessor :id, :name, :time
     end
+
  end
  end
  end

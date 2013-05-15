@@ -2,4 +2,5 @@ com/test/accounts;
 {
     id:Integer;
     name:String;
+    time:Date;
 }

@@ -1,6 +1,7 @@
 package org.remotetech.codeGeneration.java;
 
 import org.apache.commons.lang.StringUtils;
+import org.remotetech.types.ModelDate;
 import org.remotetech.types.ModelList;
 import org.remotetech.types.ModelObject;
 import org.remotetech.types.ModelVariableType;
@@ -23,6 +24,7 @@ public class JavaImportsAndPackageGenerator {
 
     public boolean hasImport(ModelVariableType modelVariableType){
         if(modelVariableType instanceof ModelList) return true;
+        if(modelVariableType instanceof ModelDate) return true;
         if(modelVariableType instanceof ModelObject) return true;
         return false;
     }
@@ -36,6 +38,8 @@ public class JavaImportsAndPackageGenerator {
                 imports.add(modelObjectImportService.getModelObjectImportString((ModelObject) modelVariableType1));
             }
             return imports;
+        } else if( localVariable instanceof ModelDate){
+            return Collections.singletonList("java.util.Date");
         }
         if(modelObjectImportService.isModelImportRequired(localVariable, object)){
             final String importString = modelObjectImportService.getModelObjectImportString((ModelObject) localVariable);

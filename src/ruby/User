@@ -5,6 +5,7 @@
     class User
        attr_accessor :id, :firstName, :company, :weight, :blueEyes
     end
+
  end
  end
  end

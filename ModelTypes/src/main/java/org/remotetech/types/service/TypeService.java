@@ -23,6 +23,7 @@ public class TypeService {
         stringModelVariableTypeHashMap.put(new ModelList().getTypeName(), new ModelList());
         stringModelVariableTypeHashMap.put(new ModelString().getTypeName(), new ModelString());
         stringModelVariableTypeHashMap.put(new ModelBoolean().getTypeName(), new ModelBoolean());
+        stringModelVariableTypeHashMap.put(new ModelDate().getTypeName(), new ModelDate());
         return stringModelVariableTypeHashMap;
     }
 }

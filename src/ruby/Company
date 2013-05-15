@@ -5,6 +5,7 @@
     class Company
        attr_accessor :id, :name, :accounts
     end
+
  end
  end
  end
