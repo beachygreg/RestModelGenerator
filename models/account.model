@@ -1,4 +1,4 @@
-com/test/account;
+com/test/accounts;
 {
     id:Integer;
     name:String;

@@ -23,6 +23,7 @@ public class FileLocationService {
 
     public void createFolder(String location){
         final File file = new File(src + location);
+
         if(!file.exists()){
             file.mkdirs();
         }

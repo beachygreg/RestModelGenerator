@@ -1,5 +1,10 @@
-module Com::Test::Account
+ module Com 
+ module Test 
+ module Accounts 
+
     class Account
-       attr_accessor :id, name
+       attr_accessor :id, :name
     end
-end
+ end
+ end
+ end

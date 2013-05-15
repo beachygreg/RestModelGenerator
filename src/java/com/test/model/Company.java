@@ -1,6 +1,8 @@
 package com.test.model;
 
-import java.util.List;import com.test.account.Account;
+import java.util.List;
+import com.test.accounts.Account;
+
 
 public class Company {
 

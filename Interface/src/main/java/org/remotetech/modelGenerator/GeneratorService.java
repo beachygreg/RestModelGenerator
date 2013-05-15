@@ -1,6 +1,7 @@
 package org.remotetech.modelGenerator;
 
 import org.apache.commons.lang.StringUtils;
+import org.remotetech.codeGeneration.FileLocationService;
 import org.remotetech.codeGeneration.GenerationException;
 import org.remotetech.codeGeneration.java.JavaGenerator;
 import org.remotetech.codeGeneration.ruby.RubyGenerator;
@@ -9,6 +10,7 @@ import org.remotetech.types.ModelObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -40,5 +42,11 @@ public class GeneratorService {
             default:
                 throw new GenerationException("This language does not exist, feel free to add it to our project on git hub." );
         }
+    }
+
+    public void cleanSrcDir(){
+
+        File file = new File(FileLocationService.SRC);
+        file.delete();
     }
 }

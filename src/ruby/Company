@@ -1,5 +1,10 @@
-module Com::Test::Model
+ module Com 
+ module Test 
+ module Model 
+
     class Company
-       attr_accessor :id, name, accounts
+       attr_accessor :id, :name, :accounts
     end
-end
+ end
+ end
+ end

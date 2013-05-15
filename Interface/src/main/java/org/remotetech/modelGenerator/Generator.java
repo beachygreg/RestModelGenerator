@@ -13,8 +13,8 @@ public class Generator {
     public static void main(String args[]){
         ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         //TODO get the program to work via arguments...
-        final GeneratorService bean = appContext.getBean(GeneratorService.class);
-        bean.generateCode(GenerationLanguage.JAVA, null);
-        bean.generateCode(GenerationLanguage.RUBY, null);
+        final GeneratorService generatorService = appContext.getBean(GeneratorService.class);
+        generatorService.generateCode(GenerationLanguage.JAVA, null);
+        generatorService.generateCode(GenerationLanguage.RUBY, null);
     }
 }

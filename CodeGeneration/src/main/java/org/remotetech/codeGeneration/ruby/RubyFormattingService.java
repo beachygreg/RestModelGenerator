@@ -18,9 +18,7 @@ import java.util.List;
 public class RubyFormattingService {
 
 
-    private static final String RUBY_MODULE_SEPARATOR = "::";
-
-    public String createModuleString(ModelObject modelObject){
+    public List<String> createModuleStrings(ModelObject modelObject){
         String classPath = modelObject.getClassPath();
 
         String[] split = StringUtils.split(classPath, "/");
@@ -29,7 +27,7 @@ public class RubyFormattingService {
             strings.add(CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, s));
         }
 
-        return StringUtils.join(strings, RUBY_MODULE_SEPARATOR);
+        return strings;
 
     }
 
@@ -37,7 +35,7 @@ public class RubyFormattingService {
         ArrayList<String> strings = new ArrayList<String>();
 
         for (ModelVariableType modelVariableType : modelObject.getVariables()) {
-            strings.add(modelVariableType.getVariableName());
+            strings.add(":" + modelVariableType.getVariableName());
         }
 
         return strings;

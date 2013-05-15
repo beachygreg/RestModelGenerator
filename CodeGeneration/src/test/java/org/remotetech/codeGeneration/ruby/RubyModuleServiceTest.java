@@ -3,8 +3,11 @@ package org.remotetech.codeGeneration.ruby;
 import org.junit.Test;
 import org.remotetech.types.ModelObject;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItem;
 
 /**
  * User: greg
@@ -19,8 +22,10 @@ public class RubyModuleServiceTest {
         ModelObject modelObject = new ModelObject();
         modelObject.setClassPath("com/test/package");
 
-        String moduleString = rubyFormattingService.createModuleString(modelObject);
+        List<String> moduleString = rubyFormattingService.createModuleStrings(modelObject);
 
-        assertThat(moduleString, is("Com::Test::Package"));
+        assertThat(moduleString, hasItem("Com"));
+        assertThat(moduleString, hasItem("Package"));
+        assertThat(moduleString, hasItem("Test"));
     }
 }

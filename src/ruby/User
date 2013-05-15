@@ -1,5 +1,10 @@
-module Com::Test::Model
+ module Com 
+ module Test 
+ module Model 
+
     class User
-       attr_accessor :id, firstName, company, weight, blueEyes
+       attr_accessor :id, :firstName, :company, :weight, :blueEyes
     end
-end
+ end
+ end
+ end

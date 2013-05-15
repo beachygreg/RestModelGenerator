@@ -31,7 +31,7 @@ public class RubyGenerator implements CodeGenerator {
             final ST clazz = stGroup.getInstanceOf("class");
 
             clazz.add("modelObject", modelObject);
-            clazz.add("moduleNameSpace", rubyFormattingService.createModuleString(modelObject));
+            clazz.add("moduleNameSpace", rubyFormattingService.createModuleStrings(modelObject));
             clazz.add("variableNames", rubyFormattingService.createVariableNameList(modelObject));
 
             fileLocationService.createFile(clazz.render(), modelObject.getClassName());

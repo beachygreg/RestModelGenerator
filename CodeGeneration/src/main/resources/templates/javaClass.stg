@@ -4,7 +4,7 @@ import "javaGenerics.stg"
 class(modelObject, package, imports) ::= <<
 package <package>;
 
-<imports: {x | import <x>;}>
+<imports: {x | import <x>;<\n>}>
 
 public class <modelObject.className> {
 
