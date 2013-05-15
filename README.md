@@ -44,11 +44,13 @@ testList:List:String;
 
 The following types are currently supported:
 ```
-varString:String;
-varNumber:Integer;
-varFloatingPoint:Float;
-varListOfStrings:List:String;
-varOwnObject:CoustomModelObject;
+<var name>:String;
+<var name>:Integer;
+<var name>:Float;
+<var name>:Boolean;
+<var name>:Date;
+<var name>:List:<list type>;
+<var name>:CoustomObject;
 ```
 
 Model file example
