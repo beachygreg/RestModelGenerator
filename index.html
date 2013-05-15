@@ -28,32 +28,130 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>Welcome to GitHub Pages.</h3>
+          <h1>RestModelGenerator</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This tool is intended for developers of REST applications. It will generate simple objects that can represend the json or xml your rest interface accepts. This tool is not limited to rest, it is intended to generate data type objects for any purpose.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>A simple syntax is used to define your objects. Once you have created these model definition files you can generate your code as required.</p>
+
+<p>Currently supported languages are:</p>
+
+<ul>
+<li>Java</li>
+<li>Ruby</li>
+</ul><p>Get started fast! Replace the example model files in the <code>models</code> directory with some of your own then run <code>org.remotetech.modelGenerator.Generator</code>. </p>
+
+<h2>Creating model files</h2>
+
+<p>File names must be in the following format <code>"&lt;class name&gt;.model"</code>. Example: <code>myClass.model</code></p>
+
+<p>All line endings are denoted by a semicolumn and all white spaces in files are ignored.</p>
+
+<p>The first entry in the file should be the output directory or package for the file, folders delimeted by forward slash. </p>
+
+<p>Example:</p>
+
+<pre><code>test/output/dir;
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>After the folder output line the class body declration can begin. The class body is encapsulated by curly brackets. You declear each variable and variable type of the class within the body. Varaible names must be in lower camel case.</p>
 
-<h3>Designer Templates</h3>
+<p>Variable name off member variables are declared first, followed by a column then the type and then a semicolumn to denote the end of line <code>"&lt;variable name&gt;:&lt;type&gt;;"</code>.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Example:</p>
 
-<h3>Rather Drive Stick?</h3>
+<pre><code>testVar:String;
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>A List is declared the same as normal variables (as if the list was the type) but the type of objects in the list is denoted following the type. <code>"&lt;variable name&gt;:List:&lt;type&gt;;"</code></p>
 
-<h3>Authors and Contributors</h3>
+<p>Example:</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<pre><code>testList:List:String;
+</code></pre>
 
-<h3>Support or Contact</h3>
+<p>The following types plus your defined objects are currently supported:</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<pre><code>&lt;var name&gt;:String;
+&lt;var name&gt;:Integer;
+&lt;var name&gt;:Float;
+&lt;var name&gt;:Boolean;
+&lt;var name&gt;:Date;
+&lt;var name&gt;:List:&lt;list type&gt;;
+</code></pre>
+
+<h2>Model file example</h2>
+
+<p>Filename: <code>test.model</code></p>
+
+<div class="highlight"><pre>com/model/test;
+{
+    id:Integer;
+    name:String;
+
+}
+</pre></div>
+
+<p>This would generate the following</p>
+
+<p>Java:</p>
+
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">model</span><span class="o">.</span><span class="na">test</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+   <span class="kd">private</span> <span class="n">Integer</span> <span class="n">id</span><span class="o">;</span>
+   <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+   <span class="kd">public</span> <span class="n">Integer</span> <span class="nf">getId</span><span class="o">(){</span>
+      <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">id</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">){</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">(){</span>
+      <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+   <span class="o">}</span>
+
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">){</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>Ruby:</p>
+
+<div class="highlight"><pre> <span class="k">module</span> <span class="nn">Com</span> 
+ <span class="k">module</span> <span class="nn">Model</span> 
+ <span class="k">module</span> <span class="nn">Test</span> 
+
+    <span class="k">class</span> <span class="nc">Test</span>
+       <span class="kp">attr_accessor</span> <span class="ss">:id</span><span class="p">,</span> <span class="ss">:name</span>
+    <span class="k">end</span>
+ <span class="k">end</span>
+ <span class="k">end</span>
+ <span class="k">end</span>
+</pre></div>
+
+<h2>Replacing Templates</h2>
+
+<p>If you look at the source code in <code>CodeGeneration/src/main/resources/templates</code> you will find the templates used to generate the code. You can copy these files change them as you see fit then place them in the directory you are running the project in the subfolder templates.</p>
+
+<h2>Feature Development</h2>
+
+<p>There are allot more features to some to RestModelGenerator so if there is something think needs adding or want to help out let me know <a href="mailto:beachy.greg@gmail.com">beachy.greg@gmail.com</a>!</p>
+
+<p>Features still to be developed</p>
+
+<ul>
+<li>Add scripts for running project from command line.</li>
+<li>C# language generation.</li>
+<li>Add support for Map type.</li>
+<li>Add adders to pojo's for lists.</li>
+<li>Add annotations or something to mode file syntax for more flexability in language generation.</li>
+<li>Allow model files to extend other mode files (note not for class extension). </li>
+</ul>
         </section>
 
         <aside id="sidebar">
