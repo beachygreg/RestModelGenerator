@@ -63,9 +63,11 @@ com/model/test;
 }
 ```
 
-This would generate the following in java:
+This would generate the following
+
+Java:
 ```java
-package com/model/test;
+package com.model.test;
 
 public class Test {
    private Integer id;
@@ -89,6 +91,19 @@ public class Test {
 }
 ```
 
+Ruby:
+```ruby
+ module Com 
+ module Model 
+ module Test 
+
+    class Test
+       attr_accessor :id, :name
+    end
+ end
+ end
+ end
+```
 Replacing Templates
 --------------------
 If you look at the source code in `CodeGeneration/src/main/resources/templates` you will find the templates used to generate the code. You can copy these files change them as you see fit then place them in the directory you are running the project in the subfolder templates.
