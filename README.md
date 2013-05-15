@@ -42,7 +42,7 @@ Example:
 testList:List:String;
 ```
 
-The following types are currently supported:
+The following types plus your defined objects are currently supported:
 ```
 <var name>:String;
 <var name>:Integer;
@@ -50,7 +50,6 @@ The following types are currently supported:
 <var name>:Boolean;
 <var name>:Date;
 <var name>:List:<list type>;
-<var name>:CoustomObject;
 ```
 
 Model file example
