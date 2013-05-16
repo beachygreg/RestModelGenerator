@@ -114,7 +114,6 @@ Feature Development
 There are allot more features to some to RestModelGenerator so if there is something think needs adding or want to help out let me know beachy.greg@gmail.com!
 
 Features still to be developed
-+ Add scripts for running project from command line.
 + C# language generation.
 + Add support for Map type.
 + Add adders to pojo's for lists.
